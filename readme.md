@@ -5,6 +5,7 @@ This quiz is used to test the following
 1. Test your understanding of GIT flow
 2. Test your understanding of Terraform structure
 3. Test your understanding of Terraform functions
+4. Suggest improvements to infrastructure/Terraform
 
 ## Objective
 
