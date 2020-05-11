@@ -1,5 +1,17 @@
 # Terraform Quiz
 
+This quiz is used to test the following
+
+1. Test your understanding of GIT flow
+2. Test your understanding of Terraform structure
+3. Test your understanding of Terraform functions
+
+## Objective
+
+Fix the issues with the Terraform to allow it to create 3 virtual machines in the North Europe region of Azure.
+
+## Code
+
 The following terraform includes the following modules:
 
 1. Resource Group - This will create an Azure resource group
@@ -40,17 +52,6 @@ terraform-quiz
 ├── variables.tf
 └── versions.tf
 ```
-# Quiz
-
-This quiz is used to test the following
-
-1. Test your understanding of GIT flow
-2. Test your understanding of Terraform structure
-3. Test your understanding of Terraform functions
-
-## Objective
-
-Fix the issues with the Terraform to allow it to create 3 virtual machines in the North Europe region of Azure.
 
 # Tips
 
