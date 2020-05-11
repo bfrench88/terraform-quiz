@@ -34,6 +34,8 @@ terraform-quiz
 │       ├── output.tf
 │       ├── terraform.tf
 │       └── variables.tf
+├── provider.tf
+├── readme.md
 ├── terraform.tfvars
 ├── variables.tf
 └── versions.tf
