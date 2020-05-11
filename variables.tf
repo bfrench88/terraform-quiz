@@ -4,5 +4,5 @@ variable "location" {
 }
 
 variable "resource_group_name" {
-  default = "bamboo_remote_agents"
+  default = ""
 }

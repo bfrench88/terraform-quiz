@@ -31,13 +31,13 @@ variable "winagent_remote_port_udp" {
 
 variable "winagent_remote_ports_tcp" {
   description = "Remote tcp port to be used for access to the vms created via the nsg applied to the nics."
-  type = list (string)
-  default     = ["3389", "22"]
+  type        = list(string)
+  default     = ["3389"]
 }
 
 // Network Details
 variable virtual_network_name {
-  default     = ""
+  default = ""
 }
 
 variable "network_address_space" {

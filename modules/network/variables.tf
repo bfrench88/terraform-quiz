@@ -1,9 +1,9 @@
 variable "location" {
   description = "The location/region where the resource group is created. Changing this forces a new resource to be created."
-  default = ""
+  default     = ""
 }
 
-variable resource_group_name{
+variable resource_group_name {
   default = ""
 }
 
@@ -12,5 +12,5 @@ variable "id" {
 }
 
 variable "network_address_space" {
-    default = ""
+  default = ""
 }

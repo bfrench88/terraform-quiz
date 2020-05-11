@@ -1,7 +1,7 @@
 // Azure RM provider
 
 provider "azurerm" {
-  version         = "~> 1.32"
+  version = "~> 1.32"
 }
 
 // Random provider

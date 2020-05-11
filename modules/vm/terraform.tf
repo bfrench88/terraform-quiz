@@ -68,14 +68,14 @@ resource "azurerm_network_security_group" "vm-winagent" {
 
 // create nsg rule
 resource "azurerm_network_security_rule" "vm-winagent1" {
-  count             = length(var.winagent_remote_ports_tcp)
-  name              = "allow_remote_management[${element(var.winagent_remote_ports_tcp, count.index)}]"
-  description       = "Allow remote management protocol in TCP"
-  priority          = count.index + 100
-  direction         = "Inbound"
-  access            = "Allow"
-  protocol          = "Tcp"
-  source_port_range = "*"
+  count                       = length(var.winagent_remote_ports_tcp)
+  name                        = "allow_remote_management[${element(var.winagent_remote_ports_tcp, count.index)}]"
+  description                 = "Allow remote management protocol in TCP"
+  priority                    = count.index + 100
+  direction                   = "Inbound"
+  access                      = "Allow"
+  protocol                    = "Tcp"
+  source_port_range           = "*"
   destination_port_ranges     = ["${element(var.winagent_remote_ports_tcp, count.index)}"]
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
@@ -132,6 +132,6 @@ resource "azurerm_virtual_machine_data_disk_attachment" "winagent-data1" {
   count              = var.winagent_instances_count
   managed_disk_id    = azurerm_managed_disk.winagent-data1[count.index].id
   virtual_machine_id = element(azurerm_virtual_machine.winagent.*.id, count.index)
-  lun     = 10 + count.index
-  caching = "ReadWrite"
+  lun                = 10 + count.index
+  caching            = "ReadWrite"
 }
