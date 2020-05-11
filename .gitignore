@@ -1,0 +1,8 @@
+# ignoring local TF files
+**/.terraform/*
+
+# ignoring environments files
+.setenv.sh
+
+# ignoring DS Store
+.DS_Store
