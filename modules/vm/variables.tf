@@ -63,7 +63,7 @@ variable "winagent_instances_count" {
 
 variable "vm_winagent_size" {
   description = "Specifies the size of the Windows Bamboo Agent virtual machine."
-  default     = "Standard_D4s_v3"
+  default     = "Standard_D2s_v3"
 }
 
 variable "vm_winagent_os_publisher" {
