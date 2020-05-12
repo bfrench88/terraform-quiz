@@ -1,5 +1,5 @@
 /*
-Supported variables in this files are as follows:
+Supported variables in this files are:
 
 location
 resource_group_name
