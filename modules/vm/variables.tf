@@ -45,8 +45,8 @@ variable "network_address_space" {
   description = "Address space for virtual network"
 }
 
-variable "buildagent_address_prefix" {
-  description = "Specifies the winagent network subnet"
+variable "address_prefix" {
+  description = "Specifies the network subnet"
   default     = ""
 }
 

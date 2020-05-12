@@ -56,7 +56,7 @@ resource "azurerm_subnet" "vs-buildgent" {
   name                 = "buildagent_subnet"
   resource_group_name  = var.resource_group_name
   virtual_network_name = var.virtual_network_name
-  address_prefix       = var.buildagent_address_prefix
+  address_prefix       = var.address_prefix
 }
 
 // create network security group

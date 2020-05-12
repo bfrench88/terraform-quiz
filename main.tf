@@ -22,16 +22,16 @@ module "networkspace" {
   source                = "./modules/network"
   resource_group_name   = "${module.resourcegroup.name}"
   location              = var.location
-  network_address_space = "192.168.200.0/22"
+  network_address_space = var.network_address_space
 }
 
 // create virtual machines
 module "vm" {
-  source                    = "./modules/vm"
-  location                  = var.location
-  resource_group_name       = module.resourcegroup.name
-  winagent_instances_count  = 3
-  virtual_network_name      = module.networkspace.name
-  buildagent_address_prefix = "192.168.200.0/24"
-  id                        = random_string.id.result
+  source                   = "./modules/vm"
+  location                 = var.location
+  resource_group_name      = module.resourcegroup.name
+  winagent_instances_count = var.winagent_instances_count
+  virtual_network_name     = module.networkspace.name
+  address_prefix           = var.address_prefix
+  id                       = random_string.id.result
 }

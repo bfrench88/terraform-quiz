@@ -6,3 +6,18 @@ variable "location" {
 variable "resource_group_name" {
   default = ""
 }
+
+variable network_address_space {
+  type    = string
+  default = ""
+}
+
+variable winagent_instances_count {
+  type    = string
+  default = ""
+}
+
+variable address_prefix {
+  type        = string
+  default     = ""
+}
