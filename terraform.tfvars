@@ -9,7 +9,7 @@ address_prefix
 
 */
 
-resource_group_name = "win-agent"
-network_address_space = "192.168.200.0/22"
-address_prefix = "192.168.200.0/24"
+resource_group_name      = "win-agent"
+network_address_space    = "192.168.200.0/22"
+address_prefix           = "192.168.200.0/24"
 winagent_instances_count = 3
