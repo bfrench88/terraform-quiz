@@ -1,7 +1,12 @@
 /// Configure the Providers ///
 
-provider "random" {
-  version = "~> 2.0"
+terraform {
+  required_providers {
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
+  }
 }
 
 // Generate random string for dns 
@@ -56,7 +61,7 @@ resource "azurerm_subnet" "vs-buildgent" {
   name                 = "buildagent_subnet"
   resource_group_name  = var.resource_group_name
   virtual_network_name = var.virtual_network_name
-  address_prefix       = var.address_prefix
+  address_prefixes     = [var.address_prefix]
 }
 
 // create network security group
@@ -76,7 +81,7 @@ resource "azurerm_network_security_rule" "vm-winagent1" {
   access                      = "Allow"
   protocol                    = "Tcp"
   source_port_range           = "*"
-  destination_port_ranges     = ["${element(var.winagent_remote_ports_tcp, count.index)}"]
+  destination_port_ranges     = [element(var.winagent_remote_ports_tcp, count.index)]
   source_address_prefix       = "*"
   destination_address_prefix  = "*"
   resource_group_name         = var.resource_group_name
@@ -97,11 +102,10 @@ resource "azurerm_public_ip" "vm-winagent" {
 
 // create vm nic
 resource "azurerm_network_interface" "vm-winagent" {
-  count                     = var.winagent_instances_count
-  name                      = "nic-${var.vm_winagent_hostname}-${count.index}"
-  location                  = var.location
-  resource_group_name       = var.resource_group_name
-  network_security_group_id = azurerm_network_security_group.vm-winagent.id
+  count               = var.winagent_instances_count
+  name                = "nic-${var.vm_winagent_hostname}-${count.index}"
+  location            = var.location
+  resource_group_name = var.resource_group_name
 
   ip_configuration {
     name                          = "ipconfig${count.index}"
