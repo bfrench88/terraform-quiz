@@ -20,7 +20,7 @@ module "resourcegroup" {
 // create virual network
 module "networkspace" {
   source                = "./modules/network"
-  resource_group_name   = "${module.resourcegroup.name}"
+  resource_group_name   = module.resourcegroup.name
   location              = var.location
   network_address_space = var.network_address_space
 }
